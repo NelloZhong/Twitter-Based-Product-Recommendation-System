@@ -1,6 +1,7 @@
 Twitter-Based Product / Sales Events Recommender
 ========================
-
+This is a course project of the big data analytics. 
+The project was worked together by  Qianyi Zhong ,  Dongxue Liu and Lucy Lin.
 
 
 The entry program of the whole project is /BigDataProject/src/cmu/arktweetnlp/GetFollowersIDs.java
@@ -24,24 +25,7 @@ The entry program of the whole project is /BigDataProject/src/cmu/arktweetnlp/Ge
    1.  Retailor offers information about products and sales events
    2.  Check ratings for products from our users
 
-## Usage
-###Category Classification
-   **repositery: CategoryClassification/<br>**
-   1)  Calculate the TF-IDF value for each word in "total.txt" and generate the file "catTFIDF.dat" for querying:<br>
-```
-python createIndex_amazonCat.py stopwords.dat total.txt catTFIDF.dat
-```
-<br>
 
-
-   2) Execute the program, type in your queries (free text, phrases), and it will rank the most similar category and return the result:<br>
-```
-python queryIndex_amazonCat.py stopwords.dat catTFIDF.dat total.txt
-```
-<br>
-  
-
-   More Information: http://www.ardendertat.com/2012/01/11/implementing-search-engines/
 
 ###Awmazon Web Service : Product Query
    **repositery: AWSquery/<br>**
