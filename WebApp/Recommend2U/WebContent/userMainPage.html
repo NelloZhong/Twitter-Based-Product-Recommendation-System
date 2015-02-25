@@ -1,0 +1,108 @@
+<br><br><h1 style="text-align: center">Welcome to Recommend2U, {{userName}}<span class="glyphicon glyphicon-glass"></span></h1><br>
+<div class="form-group">
+    <div class="container">
+    <input type="text" ng-model="keywords" style="width:300px;margin:0 auto;" class="form-control" placeholder="Please enter key words here...">
+    <br>
+    <p style="text-align:center">
+    	<button class="btn" ng-click="searchProducts(keywords); historyShow=false; recommendShow=false">
+    	<span class="glyphicon glyphicon-search"></span>Search</button>
+    </p>
+    <br>    
+   	<div class="text-center">        
+        <button class="btn btn-success" ng-click="getRecommend(userName); searchResultShow=false; historyShow=false; recommendShow=true">
+        <span class="glyphicon glyphicon-glass"></span> Get Recommendations!
+        
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    	</button>
+    	        <button class="btn btn-success" ng-click="getHistory(userName); searchResultShow=false;recommendShow=false; historyShow=true">
+        <span class="glyphicon glyphicon-glass"></span> Get History
+    	</button>
+    </div>
+
+</div>
+<br><br><hr>
+
+<div class="container" ng-show="historyShow">
+    <h3 style="text-align: left">Reviewed products</h3>
+	    <table class="table table-striped">
+        <thead>
+        <tr>
+            <th>Product ID/SKU</th>
+            <th>Name</th>
+            <th>Rating</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr ng-repeat="x in history_product">
+            <td>{{x.product_id}}</td>
+            <td>{{x.name}}</td>
+            <td>{{x.rating}}</td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+
+<div class="container" ng-show="searchResultShow">
+    <h3 style="text-align: left">Search Result</h3>
+
+	    <table class="table table-striped">
+        <thead>
+        <tr>
+            <th>Product ID/SKU</th>
+            <th>Name</th>
+            <th>address</th>
+            <th>Description</th>
+            <th>Category</th>
+            <th>Score</th>
+            <th>Price</th>
+            <th>Retailer</th>
+            <th>like</th>
+            <th>write a review!</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr ng-repeat="x in searchResult">
+            <td>{{x.product_id}}</td>
+            <td>{{x.name}}</td>
+            <td>{{x.url}}</td>
+            <td>{{x.description}}</td>
+            <td>{{x.category}}</td>
+            <td>{{x.score}}</td>
+            <td>{{x.price}}</td>
+            <td>{{x.retailer}}</td>
+            <td><button class="btn" ng-click="addLike(x.product_id)">
+                <span class="glyphicon glyphicon-heart"></span> like
+            </button></td>
+            <td><button class="btn" ng-click="reviewShow=true">
+                <span class="glyphicon glyphicon-cloud"></span> write a review
+            </button></td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+
+<div class="container" ng-show="recommendShow">
+    <h3 style="text-align: left">Recommendation List</h3>
+    <table class="table table-striped">
+        <thead>
+        <tr>
+            <th>Product ID/SKU</th>
+            <!-- <th>Product Name</th> -->
+            <th>Rating</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr ng-repeat="x in recommend_product_info">
+			<td>{{x.product_id}}</td>
+			<!-- <td>{{x.name}}</td> -->
+            <td>{{x.rating}}</td>
+        </tr>
+        </tbody>
+    </table>
+    
+    <div ng-show="reviewShow">
+    
+    </div>
+    
+</div>
+</div>
