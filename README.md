@@ -1,7 +1,8 @@
 Twitter-Based Product / Sales Events Recommender
 ========================
 This is a course project of the big data analytics. 
-The project was worked together by  Qianyi Zhong ,  Dongxue Liu and Lucy Lin.
+The project was completed together by  Qianyi Zhong ,  Dongxue Liu and Lucy Lin.
+Due to the limitation of time, it can only run locally at this moment. However, We will keep working on it.
 
 
 The entry program of the whole project is /BigDataProject/src/cmu/arktweetnlp/GetFollowersIDs.java
